@@ -7,15 +7,22 @@ from termcolor import cprint
 def stackoverflow_soln(error):
     cprint('Searching in stackoverflow for the error '+error, 'blue')
     response = requests.get(
-        "https://api.stackexchange.com/2.2/search?order=desc&tagged=python&sort=activity&intitle="+error+"&site=stackoverflow")
+        "https://api.stackexchange.com/2.2/search?order=desc&sort=relevance&site=stackoverflow&intitle="+error)
     res = response.json()['items']
     i = 0
+    solutions = []
     for data in res:
         i += 1
-        if i <= 5:
+        if i <= 10:
             if data['is_answered']:
-                cprint('Opening the solution in the browser', 'cyan')
-                webbrowser.open(data['link'])
+                solutions.append(data)
+
+    cprint('Opening the solution in the browser', 'cyan')
+
+    # print(solutions)
+    solutions = sorted(solutions, key=lambda k: k['score'], reverse=True)[:2]
+    for soln in solutions:
+        webbrowser.open(soln['link'])
 
 
 def execute_actual_program(file):
