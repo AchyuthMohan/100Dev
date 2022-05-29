@@ -17,7 +17,7 @@ def take_screenshot():
 def generate_doc():
     directories = [d for d in os.listdir(os.getcwd()) if os.path.isdir(d)]
     print("\n\n\n\n ********")
-    os.system('pdoc --html beyound ')
+    os.system('pdoc --html Testproject ')
     # for directory in directories:
     #     if directory not in ['.git', 'html']:
     #         print("pdoc --html"+directory)
@@ -32,7 +32,7 @@ def generate_doc():
 
 
 def add_img_to_doc():
-    file_path = "html/a/index.html"
+    file_path = "html/Testproject/index.html"
 
     with open(file_path) as f:
         s = f.read()
@@ -49,7 +49,7 @@ def main():
     take_screenshot()
     generate_doc()
     add_img_to_doc()
-    webbrowser.open("http://127.0.0.1:5500/html/a/index.html")
+    webbrowser.open("http://127.0.0.1:5500/html/Testproject/index.html")
 
 
 main()

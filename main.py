@@ -15,10 +15,9 @@ def bordered(text):
 
 def display_text():
     bordered("100Dev")
-    font = ['slant',  "5lineoblique",
-            "banner3-D",        "isometric1", "bulbhead"]
+    font = ['slant', "banner3-D",   "big"     "larry3d", "avatar"]
     valid_color = ['red', 'green', 'yellow', 'blue', 'cyan']
-    random_choice = randint(0, len(font))
+    random_choice = randint(0, len(font)-1)
     msg = "100Dev"
     color = valid_color[random_choice]
     ascii_art = figlet_format(msg, font=font[random_choice])

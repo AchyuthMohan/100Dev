@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Testproject.QuoteManager API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Testproject.QuoteManager</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import datetime
+import uuid
+from abc import ABCMeta, abstractmethod
+from datetime import date
+
+Quote_dic = {}
+Trade_dic = {}
+
+
+# ---------------------------------------------- ABCQuote ----------------------------------------------
+class ABCQuote(object, metaclass=ABCMeta):
+    def __init__(self, symbol: str, price: float, available_volume: int, expiration_datetime: datetime = None,
+                 guid: uuid.UUID = None):
+        self.guid = guid if guid else uuid.uuid4()
+        self.symbol = symbol
+        self.price = price
+        self.available_volume = available_volume
+        self.expiration_datetime = expiration_datetime
+
+
+class Quote(ABCQuote):
+    def __init__(self, symbol: str, price: float, available_volume: int, expiration_datetime: datetime = None,
+                 guid: uuid.UUID = None):
+        super().__init__(symbol, price, available_volume, expiration_datetime, guid)
+
+
+# ---------------------------------------------- ABCTradeResult ----------------------------------------------
+class ABCTradeResult(object, metaclass=ABCMeta):
+    def __init__(self, symbol: str, volume_weighted_average_price: float, volume_requested: int, volume_executed: int,
+                 guid: uuid.UUID = None):
+        self.guid = guid if guid else uuid.uuid4()
+        self.symbol = symbol
+        self.volume_weighted_average_price = volume_weighted_average_price
+        self.volume_requested = volume_requested
+        self.volume_executed = volume_executed
+
+
+class TradeResult(ABCTradeResult):
+    def __init__(self, symbol: str, volume_weighted_average_price: float, volume_requested: int, volume_executed: int,
+                 guid: uuid.UUID = None):
+        super().__init__(symbol, volume_weighted_average_price,
+                         volume_requested, volume_executed, guid)
+
+
+# ---------------------------------------------- ABCQuoteManager ----------------------------------------------
+class ABCQuoteManager(object, metaclass=ABCMeta):
+    @abstractmethod
+    def add_or_update_quote_by_guid(self, guid: uuid.UUID, abc_quote: ABCQuote):
+        raise NotImplementedError()
+
+    @abstractmethod
+    def remove_quote(self, guid: uuid.UUID):
+        raise NotImplementedError()
+
+    @abstractmethod
+    def remove_all_quotes(self, symbol: str):
+        raise NotImplementedError()
+
+    @abstractmethod
+    def get_best_quote_with_available_volume(self, symbol: str) -&gt; ABCQuote:
+        raise NotImplementedError()
+
+    @abstractmethod
+    def execute_Trade(self, symbol: str, volume_requested: int) -&gt; ABCTradeResult:
+        raise NotImplementedError()
+
+
+class QuoteManager(ABCQuoteManager):
+
+    def add_or_update_quote_by_guid(self, guid: uuid.UUID, abc_quote: ABCQuote):
+        if guid in Quote_dic:
+            print(&#39;\n\t The quote with same id exits. So updating it to new value&#39;)
+            Quote_dic[guid].symbol = abc_quote.symbol
+            Quote_dic[guid].price = abc_quote.price
+            Quote_dic[guid].available_volume = abc_quote.available_volume
+            Quote_dic[guid].expiration_datetime = abc_quote.expiration_datetime
+        else:
+            Quote_dic[guid] = abc_quote
+        print(&#39;Successfully added &#39;, abc_quote.symbol, &#39;into the Quote_dic &#39;)
+
+    def remove_quote(self, guid: uuid.UUID):
+        if guid in Quote_dic:
+            del Quote_dic[guid]
+        else:
+            raise KeyError(&#39;Key is not found&#39;)
+
+    def remove_all_quotes(self, symbol: str):
+        symbol_found = 0
+        if symbol:
+            for key in list(Quote_dic):
+                if Quote_dic[key].symbol == symbol:
+                    del Quote_dic[key]
+                    symbol_found = 1
+            print(&#39;\n Removed all quotes of&#39;, symbol)
+            self.print_all_Quote_dic()
+            if symbol_found == 0:
+                raise KeyError(&#39;Symbol is not found&#39;)
+        else:
+            raise KeyError(&#39;Symbol is not found&#39;)
+
+    def get_best_quote_with_available_volume(self, symbol: str) -&gt; ABCQuote:
+        today = datetime.date.today()
+        smallest_value = 1000000
+        smallest_key_id = -1
+        for i in Quote_dic:
+            if Quote_dic[i].symbol == symbol and Quote_dic[i].expiration_datetime &gt; today and smallest_value &gt; Quote_dic[i].price and Quote_dic[i].available_volume:
+                smallest_value = Quote_dic[i].price
+                smallest_key_id = i
+
+        if smallest_value == 1000000:
+            print(&#39;\nNo quote is available&#39;)
+            return None
+        print(&#39;\nThe best quote for symbol&#39;, symbol, &#39;is &#39;, smallest_value)
+        return smallest_key_id
+
+    def execute_Trade(self, symbol: str, volume_requested: int) -&gt; ABCTradeResult:
+        result = volume_requested
+        global_volume_requested = volume_requested
+        no_of_iteration = 1
+
+        if self.get_best_quote_with_available_volume(symbol):
+            while result &gt;= 0:
+                print(&#39;\n\n\t\t\t * No of iteration:&#39;, no_of_iteration, &#39;*&#39;)
+                result = self.execute_Trade_recursion(
+                    symbol, result, global_volume_requested)
+                print(&#39;REMAINING VOL = &#39;, result)
+                no_of_iteration += 1
+            self.print_all_Trade_dic()
+            self.print_all_Quote_dic()
+        else:
+            print(&#39;\nERROR \t No quote is available&#39;)
+
+    def execute_Trade_recursion(self, symbol: str, volume_requested: int, global_volume_requested: int,) -&gt; ABCTradeResult:
+        lowest_price_id = self.get_best_quote_with_available_volume(symbol)
+        if lowest_price_id:
+            diff_btw_requested_and_available = Quote_dic[lowest_price_id].available_volume - volume_requested
+            print(&#39;the diff is &#39;, diff_btw_requested_and_available)
+
+            if diff_btw_requested_and_available &gt;= 0:
+                # If diff is positive, then reduce its avialabilty in Quote_dic and add it into the Trade_dic. This would stop the recursion call
+
+                Quote_dic[lowest_price_id].available_volume -= volume_requested
+                id = uuid.uuid4()
+                Trade_dic[id] = TradeResult(
+                    symbol, Quote_dic[lowest_price_id].price, global_volume_requested, volume_requested)
+                return -1
+            else:
+                # If diff is negative, it means that the available vol of lowest price symbol is not sufficient. So we need to find the next lowest price symbol
+                volume_requested -= Quote_dic[lowest_price_id].available_volume
+
+                id = uuid.uuid4()
+                Trade_dic[id] = TradeResult(symbol, Quote_dic[lowest_price_id].price,
+                                            global_volume_requested, Quote_dic[lowest_price_id].available_volume)
+                Quote_dic[lowest_price_id].available_volume -= Quote_dic[lowest_price_id].available_volume
+                # volume_requested will be the remaining vol
+                # ie remaining_vol = volume_requested - Quote_dic[lowest_price_id].available_volume
+                return volume_requested
+        else:
+            print(&#39;ERROR OCCURED \n &#39;)
+            return -1
+
+    # --------------------- Display functions --------------------
+
+    def print_all_Quote_dic(self):
+        print(&#34;\n\n -----** Displaying Quote_dic **------\n&#34;)
+        print(&#34; \t\t\t    ID  \t\t\t\t\t   |    SYM    |    PRICE     |        Available Vol  |                 DATE&#34;)
+        [print(i, &#34; \t\t\t&#34;, Quote_dic[i].symbol, &#34; \t\t&#34;, Quote_dic[i].price, &#34; \t\t\t\t\t&#34;, Quote_dic[i].available_volume,
+               &#34; \t\t\t\t\t&#34;, Quote_dic[i].expiration_datetime) for i in Quote_dic]
+
+    def print_all_Trade_dic(self):
+        print(&#34;\n\n\t\t **-------- Displaying Trade_dic --------** \n&#34;)
+        print(&#34;SYM |  vol/wt   | vol_req   |   vol_exec&#34;)
+        [print(Trade_dic[i].symbol, &#34;     &#34;, Trade_dic[i].volume_weighted_average_price, &#34;         &#34;,
+               Trade_dic[i].volume_requested, &#34;        &#34;, Trade_dic[i].volume_executed) for i in Trade_dic]
+
+
+# ------------------------------------------------ * Object creation * ----------------------------------------------------------
+
+QuoteManager1 = QuoteManager()
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;A&#39;, 10, 750, date(2020, 12, 13)))
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;A&#39;, 20, 1000, date(2020, 12, 21)))
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;B&#39;, 120, 720, date(2020, 12, 10)))
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;A&#39;, 30, 30, date(2020, 11, 12)))
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;A&#39;, 40, 30, date(1999, 11, 12)))
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;C&#39;, 10, 10, date(2020, 12, 13)))
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;C&#39;, 20, 20, date(2020, 12, 21)))
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;C&#39;, 30, 30, date(2020, 12, 10)))
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;E&#39;, 70, 30, date(2020, 7, 5)))
+QuoteManager1.add_or_update_quote_by_guid(
+    uuid.uuid4(), Quote(&#39;E&#39;, 70, 30, date(2020, 12, 4)))
+
+
+print(&#34;\n\t\t\t\t __________________________________ INITIAL QUOTE TABLE __________________________________ &#34;)
+QuoteManager1.print_all_Quote_dic()
+
+# QuoteManager1.remove_all_quotes(&#39;A&#39;)
+#
+# QuoteManager1.get_best_quote_with_available_volume(&#39;A&#39;)
+# print(&#34;\n\n********************************* \n&#34;)
+
+QuoteManager1.remove_all_quotes(&#39;E&#39;)
+
+# QuoteManager1.remove_all_quotes(&#39;&#39;)
+
+QuoteManager1.get_best_quote_with_available_volume(&#39;C&#39;)
+
+
+print(&#34;\n\n*************After calling execute_Trade(&#39;C&#39;,35) ******************** \n&#34;)
+QuoteManager1.execute_Trade(&#39;C&#39;, 35)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Testproject.QuoteManager.ABCQuote"><code class="flex name class">
+<span>class <span class="ident">ABCQuote</span></span>
+<span>(</span><span>symbol: str, price: float, available_volume: int, expiration_datetime: <module 'datetime' from 'C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python310\\lib\\datetime.py'> = None, guid: uuid.UUID = None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ABCQuote(object, metaclass=ABCMeta):
+    def __init__(self, symbol: str, price: float, available_volume: int, expiration_datetime: datetime = None,
+                 guid: uuid.UUID = None):
+        self.guid = guid if guid else uuid.uuid4()
+        self.symbol = symbol
+        self.price = price
+        self.available_volume = available_volume
+        self.expiration_datetime = expiration_datetime</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="Testproject.QuoteManager.Quote" href="#Testproject.QuoteManager.Quote">Quote</a></li>
+</ul>
+</dd>
+<dt id="Testproject.QuoteManager.ABCQuoteManager"><code class="flex name class">
+<span>class <span class="ident">ABCQuoteManager</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ABCQuoteManager(object, metaclass=ABCMeta):
+    @abstractmethod
+    def add_or_update_quote_by_guid(self, guid: uuid.UUID, abc_quote: ABCQuote):
+        raise NotImplementedError()
+
+    @abstractmethod
+    def remove_quote(self, guid: uuid.UUID):
+        raise NotImplementedError()
+
+    @abstractmethod
+    def remove_all_quotes(self, symbol: str):
+        raise NotImplementedError()
+
+    @abstractmethod
+    def get_best_quote_with_available_volume(self, symbol: str) -&gt; ABCQuote:
+        raise NotImplementedError()
+
+    @abstractmethod
+    def execute_Trade(self, symbol: str, volume_requested: int) -&gt; ABCTradeResult:
+        raise NotImplementedError()</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="Testproject.QuoteManager.QuoteManager" href="#Testproject.QuoteManager.QuoteManager">QuoteManager</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="Testproject.QuoteManager.ABCQuoteManager.add_or_update_quote_by_guid"><code class="name flex">
+<span>def <span class="ident">add_or_update_quote_by_guid</span></span>(<span>self, guid: uuid.UUID, abc_quote: <a title="Testproject.QuoteManager.ABCQuote" href="#Testproject.QuoteManager.ABCQuote">ABCQuote</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@abstractmethod
+def add_or_update_quote_by_guid(self, guid: uuid.UUID, abc_quote: ABCQuote):
+    raise NotImplementedError()</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.ABCQuoteManager.execute_Trade"><code class="name flex">
+<span>def <span class="ident">execute_Trade</span></span>(<span>self, symbol: str, volume_requested: int) ‑> <a title="Testproject.QuoteManager.ABCTradeResult" href="#Testproject.QuoteManager.ABCTradeResult">ABCTradeResult</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@abstractmethod
+def execute_Trade(self, symbol: str, volume_requested: int) -&gt; ABCTradeResult:
+    raise NotImplementedError()</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.ABCQuoteManager.get_best_quote_with_available_volume"><code class="name flex">
+<span>def <span class="ident">get_best_quote_with_available_volume</span></span>(<span>self, symbol: str) ‑> <a title="Testproject.QuoteManager.ABCQuote" href="#Testproject.QuoteManager.ABCQuote">ABCQuote</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@abstractmethod
+def get_best_quote_with_available_volume(self, symbol: str) -&gt; ABCQuote:
+    raise NotImplementedError()</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.ABCQuoteManager.remove_all_quotes"><code class="name flex">
+<span>def <span class="ident">remove_all_quotes</span></span>(<span>self, symbol: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@abstractmethod
+def remove_all_quotes(self, symbol: str):
+    raise NotImplementedError()</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.ABCQuoteManager.remove_quote"><code class="name flex">
+<span>def <span class="ident">remove_quote</span></span>(<span>self, guid: uuid.UUID)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@abstractmethod
+def remove_quote(self, guid: uuid.UUID):
+    raise NotImplementedError()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="Testproject.QuoteManager.ABCTradeResult"><code class="flex name class">
+<span>class <span class="ident">ABCTradeResult</span></span>
+<span>(</span><span>symbol: str, volume_weighted_average_price: float, volume_requested: int, volume_executed: int, guid: uuid.UUID = None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ABCTradeResult(object, metaclass=ABCMeta):
+    def __init__(self, symbol: str, volume_weighted_average_price: float, volume_requested: int, volume_executed: int,
+                 guid: uuid.UUID = None):
+        self.guid = guid if guid else uuid.uuid4()
+        self.symbol = symbol
+        self.volume_weighted_average_price = volume_weighted_average_price
+        self.volume_requested = volume_requested
+        self.volume_executed = volume_executed</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="Testproject.QuoteManager.TradeResult" href="#Testproject.QuoteManager.TradeResult">TradeResult</a></li>
+</ul>
+</dd>
+<dt id="Testproject.QuoteManager.Quote"><code class="flex name class">
+<span>class <span class="ident">Quote</span></span>
+<span>(</span><span>symbol: str, price: float, available_volume: int, expiration_datetime: <module 'datetime' from 'C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python310\\lib\\datetime.py'> = None, guid: uuid.UUID = None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Quote(ABCQuote):
+    def __init__(self, symbol: str, price: float, available_volume: int, expiration_datetime: datetime = None,
+                 guid: uuid.UUID = None):
+        super().__init__(symbol, price, available_volume, expiration_datetime, guid)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="Testproject.QuoteManager.ABCQuote" href="#Testproject.QuoteManager.ABCQuote">ABCQuote</a></li>
+</ul>
+</dd>
+<dt id="Testproject.QuoteManager.QuoteManager"><code class="flex name class">
+<span>class <span class="ident">QuoteManager</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class QuoteManager(ABCQuoteManager):
+
+    def add_or_update_quote_by_guid(self, guid: uuid.UUID, abc_quote: ABCQuote):
+        if guid in Quote_dic:
+            print(&#39;\n\t The quote with same id exits. So updating it to new value&#39;)
+            Quote_dic[guid].symbol = abc_quote.symbol
+            Quote_dic[guid].price = abc_quote.price
+            Quote_dic[guid].available_volume = abc_quote.available_volume
+            Quote_dic[guid].expiration_datetime = abc_quote.expiration_datetime
+        else:
+            Quote_dic[guid] = abc_quote
+        print(&#39;Successfully added &#39;, abc_quote.symbol, &#39;into the Quote_dic &#39;)
+
+    def remove_quote(self, guid: uuid.UUID):
+        if guid in Quote_dic:
+            del Quote_dic[guid]
+        else:
+            raise KeyError(&#39;Key is not found&#39;)
+
+    def remove_all_quotes(self, symbol: str):
+        symbol_found = 0
+        if symbol:
+            for key in list(Quote_dic):
+                if Quote_dic[key].symbol == symbol:
+                    del Quote_dic[key]
+                    symbol_found = 1
+            print(&#39;\n Removed all quotes of&#39;, symbol)
+            self.print_all_Quote_dic()
+            if symbol_found == 0:
+                raise KeyError(&#39;Symbol is not found&#39;)
+        else:
+            raise KeyError(&#39;Symbol is not found&#39;)
+
+    def get_best_quote_with_available_volume(self, symbol: str) -&gt; ABCQuote:
+        today = datetime.date.today()
+        smallest_value = 1000000
+        smallest_key_id = -1
+        for i in Quote_dic:
+            if Quote_dic[i].symbol == symbol and Quote_dic[i].expiration_datetime &gt; today and smallest_value &gt; Quote_dic[i].price and Quote_dic[i].available_volume:
+                smallest_value = Quote_dic[i].price
+                smallest_key_id = i
+
+        if smallest_value == 1000000:
+            print(&#39;\nNo quote is available&#39;)
+            return None
+        print(&#39;\nThe best quote for symbol&#39;, symbol, &#39;is &#39;, smallest_value)
+        return smallest_key_id
+
+    def execute_Trade(self, symbol: str, volume_requested: int) -&gt; ABCTradeResult:
+        result = volume_requested
+        global_volume_requested = volume_requested
+        no_of_iteration = 1
+
+        if self.get_best_quote_with_available_volume(symbol):
+            while result &gt;= 0:
+                print(&#39;\n\n\t\t\t * No of iteration:&#39;, no_of_iteration, &#39;*&#39;)
+                result = self.execute_Trade_recursion(
+                    symbol, result, global_volume_requested)
+                print(&#39;REMAINING VOL = &#39;, result)
+                no_of_iteration += 1
+            self.print_all_Trade_dic()
+            self.print_all_Quote_dic()
+        else:
+            print(&#39;\nERROR \t No quote is available&#39;)
+
+    def execute_Trade_recursion(self, symbol: str, volume_requested: int, global_volume_requested: int,) -&gt; ABCTradeResult:
+        lowest_price_id = self.get_best_quote_with_available_volume(symbol)
+        if lowest_price_id:
+            diff_btw_requested_and_available = Quote_dic[lowest_price_id].available_volume - volume_requested
+            print(&#39;the diff is &#39;, diff_btw_requested_and_available)
+
+            if diff_btw_requested_and_available &gt;= 0:
+                # If diff is positive, then reduce its avialabilty in Quote_dic and add it into the Trade_dic. This would stop the recursion call
+
+                Quote_dic[lowest_price_id].available_volume -= volume_requested
+                id = uuid.uuid4()
+                Trade_dic[id] = TradeResult(
+                    symbol, Quote_dic[lowest_price_id].price, global_volume_requested, volume_requested)
+                return -1
+            else:
+                # If diff is negative, it means that the available vol of lowest price symbol is not sufficient. So we need to find the next lowest price symbol
+                volume_requested -= Quote_dic[lowest_price_id].available_volume
+
+                id = uuid.uuid4()
+                Trade_dic[id] = TradeResult(symbol, Quote_dic[lowest_price_id].price,
+                                            global_volume_requested, Quote_dic[lowest_price_id].available_volume)
+                Quote_dic[lowest_price_id].available_volume -= Quote_dic[lowest_price_id].available_volume
+                # volume_requested will be the remaining vol
+                # ie remaining_vol = volume_requested - Quote_dic[lowest_price_id].available_volume
+                return volume_requested
+        else:
+            print(&#39;ERROR OCCURED \n &#39;)
+            return -1
+
+    # --------------------- Display functions --------------------
+
+    def print_all_Quote_dic(self):
+        print(&#34;\n\n -----** Displaying Quote_dic **------\n&#34;)
+        print(&#34; \t\t\t    ID  \t\t\t\t\t   |    SYM    |    PRICE     |        Available Vol  |                 DATE&#34;)
+        [print(i, &#34; \t\t\t&#34;, Quote_dic[i].symbol, &#34; \t\t&#34;, Quote_dic[i].price, &#34; \t\t\t\t\t&#34;, Quote_dic[i].available_volume,
+               &#34; \t\t\t\t\t&#34;, Quote_dic[i].expiration_datetime) for i in Quote_dic]
+
+    def print_all_Trade_dic(self):
+        print(&#34;\n\n\t\t **-------- Displaying Trade_dic --------** \n&#34;)
+        print(&#34;SYM |  vol/wt   | vol_req   |   vol_exec&#34;)
+        [print(Trade_dic[i].symbol, &#34;     &#34;, Trade_dic[i].volume_weighted_average_price, &#34;         &#34;,
+               Trade_dic[i].volume_requested, &#34;        &#34;, Trade_dic[i].volume_executed) for i in Trade_dic]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="Testproject.QuoteManager.ABCQuoteManager" href="#Testproject.QuoteManager.ABCQuoteManager">ABCQuoteManager</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="Testproject.QuoteManager.QuoteManager.add_or_update_quote_by_guid"><code class="name flex">
+<span>def <span class="ident">add_or_update_quote_by_guid</span></span>(<span>self, guid: uuid.UUID, abc_quote: <a title="Testproject.QuoteManager.ABCQuote" href="#Testproject.QuoteManager.ABCQuote">ABCQuote</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_or_update_quote_by_guid(self, guid: uuid.UUID, abc_quote: ABCQuote):
+    if guid in Quote_dic:
+        print(&#39;\n\t The quote with same id exits. So updating it to new value&#39;)
+        Quote_dic[guid].symbol = abc_quote.symbol
+        Quote_dic[guid].price = abc_quote.price
+        Quote_dic[guid].available_volume = abc_quote.available_volume
+        Quote_dic[guid].expiration_datetime = abc_quote.expiration_datetime
+    else:
+        Quote_dic[guid] = abc_quote
+    print(&#39;Successfully added &#39;, abc_quote.symbol, &#39;into the Quote_dic &#39;)</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.QuoteManager.execute_Trade"><code class="name flex">
+<span>def <span class="ident">execute_Trade</span></span>(<span>self, symbol: str, volume_requested: int) ‑> <a title="Testproject.QuoteManager.ABCTradeResult" href="#Testproject.QuoteManager.ABCTradeResult">ABCTradeResult</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def execute_Trade(self, symbol: str, volume_requested: int) -&gt; ABCTradeResult:
+    result = volume_requested
+    global_volume_requested = volume_requested
+    no_of_iteration = 1
+
+    if self.get_best_quote_with_available_volume(symbol):
+        while result &gt;= 0:
+            print(&#39;\n\n\t\t\t * No of iteration:&#39;, no_of_iteration, &#39;*&#39;)
+            result = self.execute_Trade_recursion(
+                symbol, result, global_volume_requested)
+            print(&#39;REMAINING VOL = &#39;, result)
+            no_of_iteration += 1
+        self.print_all_Trade_dic()
+        self.print_all_Quote_dic()
+    else:
+        print(&#39;\nERROR \t No quote is available&#39;)</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.QuoteManager.execute_Trade_recursion"><code class="name flex">
+<span>def <span class="ident">execute_Trade_recursion</span></span>(<span>self, symbol: str, volume_requested: int, global_volume_requested: int) ‑> <a title="Testproject.QuoteManager.ABCTradeResult" href="#Testproject.QuoteManager.ABCTradeResult">ABCTradeResult</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def execute_Trade_recursion(self, symbol: str, volume_requested: int, global_volume_requested: int,) -&gt; ABCTradeResult:
+    lowest_price_id = self.get_best_quote_with_available_volume(symbol)
+    if lowest_price_id:
+        diff_btw_requested_and_available = Quote_dic[lowest_price_id].available_volume - volume_requested
+        print(&#39;the diff is &#39;, diff_btw_requested_and_available)
+
+        if diff_btw_requested_and_available &gt;= 0:
+            # If diff is positive, then reduce its avialabilty in Quote_dic and add it into the Trade_dic. This would stop the recursion call
+
+            Quote_dic[lowest_price_id].available_volume -= volume_requested
+            id = uuid.uuid4()
+            Trade_dic[id] = TradeResult(
+                symbol, Quote_dic[lowest_price_id].price, global_volume_requested, volume_requested)
+            return -1
+        else:
+            # If diff is negative, it means that the available vol of lowest price symbol is not sufficient. So we need to find the next lowest price symbol
+            volume_requested -= Quote_dic[lowest_price_id].available_volume
+
+            id = uuid.uuid4()
+            Trade_dic[id] = TradeResult(symbol, Quote_dic[lowest_price_id].price,
+                                        global_volume_requested, Quote_dic[lowest_price_id].available_volume)
+            Quote_dic[lowest_price_id].available_volume -= Quote_dic[lowest_price_id].available_volume
+            # volume_requested will be the remaining vol
+            # ie remaining_vol = volume_requested - Quote_dic[lowest_price_id].available_volume
+            return volume_requested
+    else:
+        print(&#39;ERROR OCCURED \n &#39;)
+        return -1</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.QuoteManager.get_best_quote_with_available_volume"><code class="name flex">
+<span>def <span class="ident">get_best_quote_with_available_volume</span></span>(<span>self, symbol: str) ‑> <a title="Testproject.QuoteManager.ABCQuote" href="#Testproject.QuoteManager.ABCQuote">ABCQuote</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_best_quote_with_available_volume(self, symbol: str) -&gt; ABCQuote:
+    today = datetime.date.today()
+    smallest_value = 1000000
+    smallest_key_id = -1
+    for i in Quote_dic:
+        if Quote_dic[i].symbol == symbol and Quote_dic[i].expiration_datetime &gt; today and smallest_value &gt; Quote_dic[i].price and Quote_dic[i].available_volume:
+            smallest_value = Quote_dic[i].price
+            smallest_key_id = i
+
+    if smallest_value == 1000000:
+        print(&#39;\nNo quote is available&#39;)
+        return None
+    print(&#39;\nThe best quote for symbol&#39;, symbol, &#39;is &#39;, smallest_value)
+    return smallest_key_id</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.QuoteManager.print_all_Quote_dic"><code class="name flex">
+<span>def <span class="ident">print_all_Quote_dic</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_all_Quote_dic(self):
+    print(&#34;\n\n -----** Displaying Quote_dic **------\n&#34;)
+    print(&#34; \t\t\t    ID  \t\t\t\t\t   |    SYM    |    PRICE     |        Available Vol  |                 DATE&#34;)
+    [print(i, &#34; \t\t\t&#34;, Quote_dic[i].symbol, &#34; \t\t&#34;, Quote_dic[i].price, &#34; \t\t\t\t\t&#34;, Quote_dic[i].available_volume,
+           &#34; \t\t\t\t\t&#34;, Quote_dic[i].expiration_datetime) for i in Quote_dic]</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.QuoteManager.print_all_Trade_dic"><code class="name flex">
+<span>def <span class="ident">print_all_Trade_dic</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_all_Trade_dic(self):
+    print(&#34;\n\n\t\t **-------- Displaying Trade_dic --------** \n&#34;)
+    print(&#34;SYM |  vol/wt   | vol_req   |   vol_exec&#34;)
+    [print(Trade_dic[i].symbol, &#34;     &#34;, Trade_dic[i].volume_weighted_average_price, &#34;         &#34;,
+           Trade_dic[i].volume_requested, &#34;        &#34;, Trade_dic[i].volume_executed) for i in Trade_dic]</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.QuoteManager.remove_all_quotes"><code class="name flex">
+<span>def <span class="ident">remove_all_quotes</span></span>(<span>self, symbol: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_all_quotes(self, symbol: str):
+    symbol_found = 0
+    if symbol:
+        for key in list(Quote_dic):
+            if Quote_dic[key].symbol == symbol:
+                del Quote_dic[key]
+                symbol_found = 1
+        print(&#39;\n Removed all quotes of&#39;, symbol)
+        self.print_all_Quote_dic()
+        if symbol_found == 0:
+            raise KeyError(&#39;Symbol is not found&#39;)
+    else:
+        raise KeyError(&#39;Symbol is not found&#39;)</code></pre>
+</details>
+</dd>
+<dt id="Testproject.QuoteManager.QuoteManager.remove_quote"><code class="name flex">
+<span>def <span class="ident">remove_quote</span></span>(<span>self, guid: uuid.UUID)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_quote(self, guid: uuid.UUID):
+    if guid in Quote_dic:
+        del Quote_dic[guid]
+    else:
+        raise KeyError(&#39;Key is not found&#39;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="Testproject.QuoteManager.TradeResult"><code class="flex name class">
+<span>class <span class="ident">TradeResult</span></span>
+<span>(</span><span>symbol: str, volume_weighted_average_price: float, volume_requested: int, volume_executed: int, guid: uuid.UUID = None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TradeResult(ABCTradeResult):
+    def __init__(self, symbol: str, volume_weighted_average_price: float, volume_requested: int, volume_executed: int,
+                 guid: uuid.UUID = None):
+        super().__init__(symbol, volume_weighted_average_price,
+                         volume_requested, volume_executed, guid)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="Testproject.QuoteManager.ABCTradeResult" href="#Testproject.QuoteManager.ABCTradeResult">ABCTradeResult</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Testproject" href="index.html">Testproject</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Testproject.QuoteManager.ABCQuote" href="#Testproject.QuoteManager.ABCQuote">ABCQuote</a></code></h4>
+</li>
+<li>
+<h4><code><a title="Testproject.QuoteManager.ABCQuoteManager" href="#Testproject.QuoteManager.ABCQuoteManager">ABCQuoteManager</a></code></h4>
+<ul class="">
+<li><code><a title="Testproject.QuoteManager.ABCQuoteManager.add_or_update_quote_by_guid" href="#Testproject.QuoteManager.ABCQuoteManager.add_or_update_quote_by_guid">add_or_update_quote_by_guid</a></code></li>
+<li><code><a title="Testproject.QuoteManager.ABCQuoteManager.execute_Trade" href="#Testproject.QuoteManager.ABCQuoteManager.execute_Trade">execute_Trade</a></code></li>
+<li><code><a title="Testproject.QuoteManager.ABCQuoteManager.get_best_quote_with_available_volume" href="#Testproject.QuoteManager.ABCQuoteManager.get_best_quote_with_available_volume">get_best_quote_with_available_volume</a></code></li>
+<li><code><a title="Testproject.QuoteManager.ABCQuoteManager.remove_all_quotes" href="#Testproject.QuoteManager.ABCQuoteManager.remove_all_quotes">remove_all_quotes</a></code></li>
+<li><code><a title="Testproject.QuoteManager.ABCQuoteManager.remove_quote" href="#Testproject.QuoteManager.ABCQuoteManager.remove_quote">remove_quote</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="Testproject.QuoteManager.ABCTradeResult" href="#Testproject.QuoteManager.ABCTradeResult">ABCTradeResult</a></code></h4>
+</li>
+<li>
+<h4><code><a title="Testproject.QuoteManager.Quote" href="#Testproject.QuoteManager.Quote">Quote</a></code></h4>
+</li>
+<li>
+<h4><code><a title="Testproject.QuoteManager.QuoteManager" href="#Testproject.QuoteManager.QuoteManager">QuoteManager</a></code></h4>
+<ul class="">
+<li><code><a title="Testproject.QuoteManager.QuoteManager.add_or_update_quote_by_guid" href="#Testproject.QuoteManager.QuoteManager.add_or_update_quote_by_guid">add_or_update_quote_by_guid</a></code></li>
+<li><code><a title="Testproject.QuoteManager.QuoteManager.execute_Trade" href="#Testproject.QuoteManager.QuoteManager.execute_Trade">execute_Trade</a></code></li>
+<li><code><a title="Testproject.QuoteManager.QuoteManager.execute_Trade_recursion" href="#Testproject.QuoteManager.QuoteManager.execute_Trade_recursion">execute_Trade_recursion</a></code></li>
+<li><code><a title="Testproject.QuoteManager.QuoteManager.get_best_quote_with_available_volume" href="#Testproject.QuoteManager.QuoteManager.get_best_quote_with_available_volume">get_best_quote_with_available_volume</a></code></li>
+<li><code><a title="Testproject.QuoteManager.QuoteManager.print_all_Quote_dic" href="#Testproject.QuoteManager.QuoteManager.print_all_Quote_dic">print_all_Quote_dic</a></code></li>
+<li><code><a title="Testproject.QuoteManager.QuoteManager.print_all_Trade_dic" href="#Testproject.QuoteManager.QuoteManager.print_all_Trade_dic">print_all_Trade_dic</a></code></li>
+<li><code><a title="Testproject.QuoteManager.QuoteManager.remove_all_quotes" href="#Testproject.QuoteManager.QuoteManager.remove_all_quotes">remove_all_quotes</a></code></li>
+<li><code><a title="Testproject.QuoteManager.QuoteManager.remove_quote" href="#Testproject.QuoteManager.QuoteManager.remove_quote">remove_quote</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="Testproject.QuoteManager.TradeResult" href="#Testproject.QuoteManager.TradeResult">TradeResult</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -4,7 +4,7 @@ import pyautogui
 import time
 from datetime import datetime
 
-meeting_time = "12:03:00"
+meeting_time = "09:29:00"
 
 
 def alert_msg():
@@ -23,7 +23,7 @@ def alert_msg():
 
 def join_meeting():
 
-    meetingID = "sgs-jjpk-svk"
+    meetingID = "czi-hjoq-uze"
     webbrowser.open_new_tab('https://meet.google.com/?authser=0')
 
     pyautogui.press('enter', interval=0.5)
